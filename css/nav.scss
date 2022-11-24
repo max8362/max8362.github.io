@@ -1,0 +1,201 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.nanumgothic * {
+ font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 웹표준스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  letter-spacing: -0.08em;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+ul, li, dl, dt, dd, ol {
+  list-style: none;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/*레이아웃*/
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
+  z-index: 10000;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+#nav a {
+  display: block;
+}
+#nav h1 a img {
+  width: 150px;
+}
+#nav .depth1 {
+  display: flex;
+}
+#nav .depth1 li {
+  margin: 0 15px;
+}
+.wrap h2 {
+  text-align: center;
+}
+.wrap h2:before {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  width: 20px;
+  background-color: #222;
+  margin: 0 auto 15px;
+}
+.wrap section {
+  padding: 80px 0;
+  min-height: 600px;
+}
+/* .wrap #sec1 {
+  padding-top: 200px;
+  background-color: #ccc;
+}
+.wrap #sec3 {
+  background-color: #ccc;
+} */
+.wrap #sec4 #interview {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.wrap #sec4 #interview dt {
+  border-bottom: 1px solid #222;
+  padding: 10px;
+}
+.wrap #sec4 #interview dt:before {
+  content: "Q";
+  margin-right: 20px;
+  font-size: 1.2em;
+  color: red;
+  vertical-align: middle;
+}
+.wrap #sec4 #interview dt strong {
+  vertical-align: middle;
+  font-size: 2em;
+  font-weight: normal;
+}
+.wrap #sec4 #interview dt.show {
+  border-bottom-width: 3px;
+  border-color: #222;
+}
+.wrap #sec4 #interview dt.show strong {
+  font-weight: bold;
+}
+.wrap #sec4 #interview dt.show:before {
+  color: black;
+  font-weight: bold;
+}
+.wrap #sec4 #interview dt.show + * {
+  display: block;
+}
+.wrap #sec4 #interview dd {
+  display: none;
+  padding: 20px 50px;
+}
+
+#allMenu {
+  width: 2rem;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+}
+
+#allMenu span {
+  display: block;
+  height: 2px;
+  background-color: black;
+  margin: 11px 0;
+}
+
+#allMenu:after,
+#allMenu:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  left: 0;
+  width: 100%;
+}
+
+#allMenu:after {
+  bottom: 0;
+}
+
+#allMenu:before {
+  top: 0;
+}
+
+/* 햄버거 가상선택자 */
+#allMenu.open span{ display: none;}
+#allMenu.open:after{
+    transform: rotate(-45deg);
+}
+#allMenu.open:before{
+    transform: rotate(45deg);
+}
+#allMenu.open + .depth1{ 
+    display: block !important; 
+    position: absolute;
+    background-color: black;
+    left:0;
+    right:0;
+    padding: 20px;
+    top:100%;
+    }
+#allMenu.open + .depth1 a{ color:white}
+
+.scroll #nav{
+  background-color: #63c8df;
+}
+.scroll #nav h1 a{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://max3152.cafe24.com/maxspace/img/logo_maxspace_p.svg');
+ 
+}
+.scroll #nav h1 a img{
+  padding: 2rem 4rem;
+}
+
+/* h1  더 해야댐ㅁㅁ*/
+  .depth1 {
+  display: flex;  /*container*/
+  margin-right: -15px;
+  
+  } 
+/* 
+  #preInterview dd{display: none;}
+  #preInterview dt:hover + dd{display: block;}*/
+  
+  #preInterview dd{ height: 0; padding: 0 !important; overflow: hidden; transition: 0.5s;}   
+  /* 부트스트랩 이기기위해 !important */
+  #preInterview dt.act + dd {height: 150px;} 
+
+
